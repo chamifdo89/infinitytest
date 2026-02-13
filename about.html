@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Infinity Customs</title>
+    <meta name="description" content="Learn about the dedicated team and premium services at Infinity Customs.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0B0C10',
+                            gray: '#1F2833',
+                            silver: '#C5C6C7',
+                            cyan: '#66FCF1',
+                            teal: '#45A29E',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        tech: ['Orbitron', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0B0C10;
+            color: #C5C6C7;
+        }
+
+        h1,
+        h2,
+        h3,
+        .logo-font {
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .text-glow {
+            text-shadow: 0 0 10px rgba(102, 252, 241, 0.7);
+        }
+
+        .glass {
+            background: rgba(31, 40, 51, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(102, 252, 241, 0.1);
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/HuqXz5JUHcx8BjFL3oEN/media/34f3ccef-6452-4361-9a91-72eae61e80c4.png"
+                        alt="Infinity Customs Logo" class="h-12">
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html"
+                            class="text-gray-300 hover:text-brand-cyan hover:shadow-[0_0_10px_rgba(102,252,241,0.5)] px-3 py-2 rounded-md text-sm font-medium transition-all duration-300">Home</a>
+                        <a href="about.html"
+                            class="text-brand-cyan px-3 py-2 rounded-md text-sm font-medium border-b-2 border-brand-cyan transition-all">About
+                            Us</a>
+                        <a href="services.html"
+                            class="text-gray-300 hover:text-brand-cyan hover:shadow-[0_0_10px_rgba(102,252,241,0.5)] px-3 py-2 rounded-md text-sm font-medium transition-all duration-300">Services</a>
+                        <a href="booking.html"
+                            class="bg-brand-cyan text-brand-dark hover:bg-brand-teal hover:text-white px-5 py-2 rounded-full text-sm font-bold transition-all duration-300 shadow-lg shadow-brand-cyan/20">Book
+                            Now</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+                        class="bg-gray-900 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden glass" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    <a href="index.html"
+                        class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                    <a href="about.html" class="text-brand-cyan block px-3 py-2 rounded-md text-base font-medium">About
+                        Us</a>
+                    <a href="services.html"
+                        class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Services</a>
+                    <a href="booking.html"
+                        class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Book
+                        Now</a>
+                </div>
+            </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="bg-brand-gray/50 pt-32 pb-20 relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand-cyan/10 rounded-full filter blur-[80px]"></div>
+            <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-brand-teal/10 rounded-full filter blur-[80px]"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 logo-font text-glow">ABOUT <span
+                    class="text-brand-cyan">INFINITY</span></h1>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                More than just a service station. We are automotive artisans.
+            </p>
+        </div>
+    </header>
+
+    <!-- Story Section -->
+    <section class="py-20 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <div
+                        class="relative rounded-2xl overflow-hidden glass p-4 transform hover:rotate-1 transition-transform duration-500">
+                        <!-- Since I don't have images, using a styled placeholder -->
+                        <div
+                            class="bg-gradient-to-tr from-gray-800 to-gray-900 h-96 rounded-xl flex items-center justify-center relative overflow-hidden group">
+                            <div
+                                class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')] bg-cover bg-center opacity-70 group-hover:scale-110 transition-transform duration-700">
+                            </div>
+                            <div class="absolute inset-0 bg-black/40"></div>
+                            <h3
+                                class="relative z-10 text-2xl font-bold text-white border-2 border-brand-cyan px-6 py-2">
+                                EST. 2024</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-white logo-font mb-6">Our <span
+                            class="text-brand-cyan">Journey</span></h2>
+                    <p class="text-gray-400 mb-6 text-lg leading-relaxed">
+                        Infinity Customs is Lower Hutt's premier choice for automotive detailing and care. We
+                        established this business with a passion for perfection and a commitment to restoring every
+                        vehicle to its showroom glory.
+                    </p>
+                    <p class="text-gray-400 mb-6 text-lg leading-relaxed">
+                        Based in Taita, we offer both a fully equipped workshop and a convenient mobile service that
+                        comes to you. From deep interior cleans to high-end ceramic coatings, we treat your vehicle with
+                        the utmost respect and precision.
+                    </p>
+                    <div class="flex gap-4">
+                        <div class="text-center">
+                            <i class="fas fa-award text-3xl text-brand-cyan mb-2"></i>
+                            <div class="text-sm text-gray-400 uppercase tracking-widest">Certified</div>
+                        </div>
+                        <div class="w-px bg-gray-700 h-12"></div>
+                        <div class="text-center">
+                            <i class="fas fa-users text-3xl text-brand-cyan mb-2"></i>
+                            <div class="text-sm text-gray-400 uppercase tracking-widest">Passionate</div>
+                        </div>
+                        <div class="w-px bg-gray-700 h-12"></div>
+                        <div class="text-center">
+                            <i class="fas fa-tools text-3xl text-brand-cyan mb-2"></i>
+                            <div class="text-sm text-gray-400 uppercase tracking-widest">Advanced</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20 bg-brand-gray/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white logo-font mb-4">Meet The <span
+                        class="text-brand-cyan">Experts</span></h2>
+                <div class="w-24 h-1 bg-brand-cyan mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Member 1 -->
+                <div
+                    class="glass rounded-xl overflow-hidden hover:shadow-[0_0_20px_rgba(102,252,241,0.2)] transition-all">
+                    <div class="h-64 bg-gray-800 relative">
+                        <!-- Placeholder for team image -->
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 z-10">
+                        </div>
+                        <div class="w-full h-full flex items-center justify-center bg-gray-700 text-gray-500">
+                            <i class="fas fa-user-circle text-6xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center relative z-20 -mt-10">
+                        <h3 class="text-xl font-bold text-white">Kasun Perera</h3>
+                        <p class="text-brand-cyan text-sm uppercase tracking-wide mb-4">Lead Detailer</p>
+                        <p class="text-gray-400 text-sm">Specializes in paint correction and ceramic coatings.</p>
+                    </div>
+                </div>
+
+                <!-- Member 2 -->
+                <div
+                    class="glass rounded-xl overflow-hidden hover:shadow-[0_0_20px_rgba(102,252,241,0.2)] transition-all transform scale-105 border-brand-cyan border">
+                    <div class="h-64 bg-gray-800 relative">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 z-10">
+                        </div>
+                        <div class="w-full h-full flex items-center justify-center bg-gray-700 text-gray-500">
+                            <i class="fas fa-user-circle text-6xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center relative z-20 -mt-10">
+                        <h3 class="text-xl font-bold text-white">Tharindu Silva</h3>
+                        <p class="text-brand-cyan text-sm uppercase tracking-wide mb-4">Initial Cleaning Specialist</p>
+                        <p class="text-gray-400 text-sm">Expert in deep interior cleaning and restoration.</p>
+                    </div>
+                </div>
+
+                <!-- Member 3 -->
+                <div
+                    class="glass rounded-xl overflow-hidden hover:shadow-[0_0_20px_rgba(102,252,241,0.2)] transition-all">
+                    <div class="h-64 bg-gray-800 relative">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 z-10">
+                        </div>
+                        <div class="w-full h-full flex items-center justify-center bg-gray-700 text-gray-500">
+                            <i class="fas fa-user-circle text-6xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center relative z-20 -mt-10">
+                        <h3 class="text-xl font-bold text-white">Amila De Silva</h3>
+                        <p class="text-brand-cyan text-sm uppercase tracking-wide mb-4">Mobile Unit Manager</p>
+                        <p class="text-gray-400 text-sm">Brings our premium service directly to your doorstep.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark pt-16 pb-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/HuqXz5JUHcx8BjFL3oEN/media/34f3ccef-6452-4361-9a91-72eae61e80c4.png"
+                        alt="Infinity Customs Logo" class="h-16 mb-6 block">
+                    <p class="text-gray-500">
+                        Defining the future of vehicle care. We bring precision, passion, and performance to every
+                        service.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-brand-cyan transition-colors">Home</a>
+                        </li>
+                        <li><a href="about.html" class="text-brand-cyan transition-colors">About Us</a></li>
+                        <li><a href="services.html"
+                                class="text-gray-400 hover:text-brand-cyan transition-colors">Services</a></li>
+                        <li><a href="booking.html" class="text-gray-400 hover:text-brand-cyan transition-colors">Book
+                                Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-map-marker-alt w-6 text-brand-cyan"></i> 3 Page Grove, Taita, Lower Hutt
+                            5019</li>
+                        <li><i class="fas fa-phone w-6 text-brand-cyan"></i> 022 687 1424</li>
+                        <li><i class="fas fa-envelope w-6 text-brand-cyan"></i> infinitycustomsnz@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-600 text-sm">
+                &copy; 2024 Infinity Customs. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

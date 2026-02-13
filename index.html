@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity Customs | Premium Vehicle Service</title>
+    <meta name="description" content="Premium vehicle service station. Experience the best care for your vehicle.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0B0C10',
+                            gray: '#1F2833',
+                            silver: '#C5C6C7',
+                            cyan: '#66FCF1',
+                            teal: '#45A29E',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        tech: ['Orbitron', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0B0C10;
+            color: #C5C6C7;
+        }
+
+        h1,
+        h2,
+        h3,
+        .logo-font {
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .text-glow {
+            text-shadow: 0 0 10px rgba(102, 252, 241, 0.7);
+        }
+
+        .box-glow:hover {
+            box-shadow: 0 0 20px rgba(102, 252, 241, 0.3);
+        }
+
+        .glass {
+            background: rgba(31, 40, 51, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(102, 252, 241, 0.1);
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/HuqXz5JUHcx8BjFL3oEN/media/34f3ccef-6452-4361-9a91-72eae61e80c4.png"
+                        alt="Infinity Customs Logo" class="h-12">
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html"
+                            class="text-brand-cyan px-3 py-2 rounded-md text-sm font-medium border-b-2 border-brand-cyan transition-all">Home</a>
+                        <a href="about.html"
+                            class="text-gray-300 hover:text-brand-cyan hover:shadow-[0_0_10px_rgba(102,252,241,0.5)] px-3 py-2 rounded-md text-sm font-medium transition-all duration-300">About
+                            Us</a>
+                        <a href="services.html"
+                            class="text-gray-300 hover:text-brand-cyan hover:shadow-[0_0_10px_rgba(102,252,241,0.5)] px-3 py-2 rounded-md text-sm font-medium transition-all duration-300">Services</a>
+                        <a href="booking.html"
+                            class="bg-brand-cyan text-brand-dark hover:bg-brand-teal hover:text-white px-5 py-2 rounded-full text-sm font-bold transition-all duration-300 shadow-lg shadow-brand-cyan/20">Book
+                            Now</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+                        class="bg-gray-900 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden glass" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-brand-cyan block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="about.html"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About Us</a>
+                <a href="services.html"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Services</a>
+                <a href="booking.html"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Overlay / Image Placeholder -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-br from-brand-dark via-brand-gray to-black opacity-90"></div>
+            <!-- Decorative gradient blobs -->
+            <div
+                class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-cyan/20 rounded-full filter blur-[100px] animate-pulse-slow">
+            </div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-teal/20 rounded-full filter blur-[100px] animate-pulse-slow"
+                style="animation-delay: 1s;"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+            <h2 class="text-brand-cyan font-bold tracking-widest uppercase mb-4 animate-fade-in-up">Premium Car
+                Detailing</h2>
+            <h1
+                class="text-5xl md:text-7xl font-extrabold text-white mb-6 logo-font leading-tight animate-fade-in-up transition-all hover:scale-105 duration-500 text-glow">
+                RESTORE YOUR <br> <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-teal">VEHICLE'S
+                    GLOW</span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-400 mb-10 animate-fade-in-up"
+                style="animation-delay: 0.2s;">
+                Lower Hutt's leading car detailing experts. We bring the showroom shine back to your ride.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up"
+                style="animation-delay: 0.4s;">
+                <a href="booking.html"
+                    class="px-8 py-4 bg-brand-cyan text-brand-dark font-bold rounded-lg hover:bg-white hover:shadow-[0_0_20px_rgba(102,252,241,0.6)] transition-all duration-300 transform hover:-translate-y-1 text-lg">
+                    Book Service
+                </a>
+                <a href="#services"
+                    class="px-8 py-4 border border-brand-cyan text-brand-cyan font-bold rounded-lg hover:bg-brand-cyan/10 transition-all duration-300 text-lg">
+                    Explore Services
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#services" class="text-brand-cyan text-2xl"><i class="fas fa-chevron-down"></i></a>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-brand-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white logo-font mb-4">Our <span
+                        class="text-brand-cyan">Services</span></h2>
+                <div class="w-24 h-1 bg-brand-cyan mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div
+                    class="glass p-8 rounded-2xl transition-all duration-300 hover:transform hover:-translate-y-2 box-glow group">
+                    <div
+                        class="w-16 h-16 bg-brand-cyan/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-cyan/20 transition-colors">
+                        <i class="fas fa-spray-can text-3xl text-brand-cyan"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-brand-cyan transition-colors">
+                        Full Detailing</h3>
+                    <p class="text-gray-400">Comprehensive interior and exterior cleaning, restoring your vehicle to
+                        like-new condition.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div
+                    class="glass p-8 rounded-2xl transition-all duration-300 hover:transform hover:-translate-y-2 box-glow group">
+                    <div
+                        class="w-16 h-16 bg-brand-cyan/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-cyan/20 transition-colors">
+                        <i class="fas fa-magic text-3xl text-brand-cyan"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-brand-cyan transition-colors">
+                        Paint Correction</h3>
+                    <p class="text-gray-400">Remove swirls, scratches, and oxidation to reveal a flawless, mirror-like
+                        finish.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div
+                    class="glass p-8 rounded-2xl transition-all duration-300 hover:transform hover:-translate-y-2 box-glow group">
+                    <div
+                        class="w-16 h-16 bg-brand-cyan/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-cyan/20 transition-colors">
+                        <i class="fas fa-shipping-fast text-3xl text-brand-cyan"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-brand-cyan transition-colors">
+                        Mobile Service</h3>
+                    <p class="text-gray-400">Cannot come to us? We bring our premium detailing service directly to your
+                        location.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-brand-gray/50 border-y border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl font-bold text-white mb-2 counter" data-target="500">500+</div>
+                    <div class="text-brand-teal uppercase text-sm tracking-wider">Cars Detailed</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-white mb-2 counter" data-target="300">300+</div>
+                    <div class="text-brand-teal uppercase text-sm tracking-wider">Happy Clients</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-white mb-2 counter" data-target="5">5+</div>
+                    <div class="text-brand-teal uppercase text-sm tracking-wider">Years Experience</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-white mb-2 counter" data-target="100">100%</div>
+                    <div class="text-brand-teal uppercase text-sm tracking-wider">Mobile Ready</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark pt-16 pb-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/HuqXz5JUHcx8BjFL3oEN/media/34f3ccef-6452-4361-9a91-72eae61e80c4.png"
+                        alt="Infinity Customs Logo" class="h-16 mb-6 block">
+                    <p class="text-gray-500">
+                        Defining the future of vehicle care. We bring precision, passion, and performance to every
+                        service.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-brand-cyan transition-colors">Home</a>
+                        </li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-brand-cyan transition-colors">About
+                                Us</a></li>
+                        <li><a href="services.html"
+                                class="text-gray-400 hover:text-brand-cyan transition-colors">Services</a></li>
+                        <li><a href="booking.html" class="text-gray-400 hover:text-brand-cyan transition-colors">Book
+                                Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-map-marker-alt w-6 text-brand-cyan"></i> 3 Page Grove, Taita, Lower Hutt
+                            5019</li>
+                        <li><i class="fas fa-phone w-6 text-brand-cyan"></i> 022 687 1424</li>
+                        <li><i class="fas fa-envelope w-6 text-brand-cyan"></i> infinitycustomsnz@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-600 text-sm">
+                &copy; 2024 Infinity Customs. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Service | Infinity Customs</title>
+    <meta name="description"
+        content="Book your premium vehicle service appointment online. Choose your preferred time slot.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.7/dayjs.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // NOTE: Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS Public Key
+            // You can get this by signing up at https://www.emailjs.com/
+            emailjs.init("UIbDFboPql0KsbZCs");
+        })();
+    </script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0B0C10',
+                            gray: '#1F2833',
+                            silver: '#C5C6C7',
+                            cyan: '#66FCF1',
+                            teal: '#45A29E',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        tech: ['Orbitron', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0B0C10;
+            color: #C5C6C7;
+        }
+
+        h1,
+        h2,
+        h3,
+        .logo-font {
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .text-glow {
+            text-shadow: 0 0 10px rgba(102, 252, 241, 0.7);
+        }
+
+        .glass {
+            background: rgba(31, 40, 51, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(102, 252, 241, 0.1);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0B0C10;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #45A29E;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #66FCF1;
+        }
+
+        .booking-card.booked {
+            opacity: 0.5;
+            pointer-events: none;
+            border-color: #ef4444;
+        }
+
+        .booking-card.selected {
+            border-color: #66FCF1;
+            background: rgba(102, 252, 241, 0.1);
+            box-shadow: 0 0 15px rgba(102, 252, 241, 0.3);
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden min-h-screen flex flex-col">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/HuqXz5JUHcx8BjFL3oEN/media/34f3ccef-6452-4361-9a91-72eae61e80c4.png"
+                        alt="Infinity Customs Logo" class="h-12">
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html"
+                            class="text-gray-300 hover:text-brand-cyan hover:shadow-[0_0_10px_rgba(102,252,241,0.5)] px-3 py-2 rounded-md text-sm font-medium transition-all duration-300">Home</a>
+                        <a href="about.html"
+                            class="text-gray-300 hover:text-brand-cyan hover:shadow-[0_0_10px_rgba(102,252,241,0.5)] px-3 py-2 rounded-md text-sm font-medium transition-all duration-300">About
+                            Us</a>
+                        <a href="services.html"
+                            class="text-gray-300 hover:text-brand-cyan hover:shadow-[0_0_10px_rgba(102,252,241,0.5)] px-3 py-2 rounded-md text-sm font-medium transition-all duration-300">Services</a>
+                        <a href="booking.html"
+                            class="text-brand-cyan px-3 py-2 rounded-md text-sm font-medium border-b-2 border-brand-cyan transition-all">Book
+                            Now</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+                        class="bg-gray-900 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden glass" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="about.html"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About Us</a>
+                <a href="services.html"
+                    class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Services</a>
+                <a href="booking.html" class="text-brand-cyan block px-3 py-2 rounded-md text-base font-medium">Book
+                    Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-32 pb-20 relative">
+        <!-- Background Elements -->
+        <div class="fixed top-0 left-0 w-full h-full pointer-events-none z-0">
+            <div class="absolute top-1/3 left-0 w-96 h-96 bg-brand-cyan/5 rounded-full filter blur-[100px]"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-brand-teal/5 rounded-full filter blur-[100px]"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 logo-font text-glow">RESERVE YOUR <span
+                        class="text-brand-cyan">SPOT</span></h1>
+                <p class="text-xl text-gray-400">Select a date and time to secure your premium service appointment.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Date Selection Panel -->
+                <div class="lg:col-span-1">
+                    <div class="glass p-6 rounded-2xl h-full border-t-4 border-brand-cyan">
+                        <h3 class="text-xl font-bold text-white mb-6 flex items-center"><i
+                                class="far fa-calendar-alt mr-3 text-brand-cyan"></i> Select Date</h3>
+                        <div class="mb-6">
+                            <input type="text" id="date-picker"
+                                class="w-full bg-brand-gray text-white p-4 rounded-lg border border-gray-700 focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan outline-none transition-all text-center text-lg font-bold placeholder-gray-500"
+                                placeholder="Choose Date">
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-info-circle text-brand-teal mb-2 text-2xl"></i>
+                            <p class="text-sm text-gray-400">Please select a date to view available time slots. We are
+                                open from 9 AM to 6 PM daily.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slots Panel -->
+                <div class="lg:col-span-2">
+                    <div class="glass p-6 rounded-2xl min-h-[400px] border-t-4 border-brand-teal relative">
+                        <h3 class="text-xl font-bold text-white mb-6 flex items-center justify-between">
+                            <span><i class="far fa-clock mr-3 text-brand-cyan"></i> Available Slots</span>
+                            <span id="selected-date-display"
+                                class="text-sm text-brand-cyan font-normal bg-brand-cyan/10 px-3 py-1 rounded-full">Select
+                                a date</span>
+                        </h3>
+
+                        <div id="slots-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                            <!-- Slots will be injected here via JS -->
+                            <div class="col-span-full text-center py-20 text-gray-500">
+                                <i class="fas fa-calendar-day text-5xl mb-4 opacity-30"></i>
+                                <p>Select a date to see availability</p>
+                            </div>
+                        </div>
+
+                        <div id="loading-spinner"
+                            class="hidden absolute inset-0 bg-brand-dark/80 backdrop-blur-sm flex items-center justify-center z-20 rounded-2xl">
+                            <div class="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-brand-cyan">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="fixed inset-0 z-[100] hidden overflow-y-auto" aria-labelledby="modal-title"
+        role="dialog" aria-modal="true">
+        <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <!-- Background overlay -->
+            <div class="fixed inset-0 bg-black bg-opacity-80 transition-opacity" aria-hidden="true"
+                onclick="closeModal()"></div>
+
+            <!-- Modal panel -->
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div
+                class="inline-block align-bottom glass rounded-2xl text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg w-full border border-brand-cyan/30">
+                <div class="bg-brand-gray/50 px-4 pt-5 pb-4 sm:p-6 sm:pb-4 border-b border-gray-700">
+                    <div class="sm:flex sm:items-start">
+                        <div
+                            class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-brand-cyan/10 sm:mx-0 sm:h-10 sm:w-10">
+                            <i class="fas fa-check text-brand-cyan"></i>
+                        </div>
+                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
+                            <h3 class="text-2xl leading-6 font-bold text-white logo-font" id="modal-title">Confirm
+                                Booking</h3>
+                            <div class="mt-2">
+                                <p class="text-sm text-brand-teal mb-4" id="modal-slot-info">Date: -- | Time: --</p>
+                                <form id="booking-form" class="space-y-4">
+                                    <div>
+                                        <label for="name" class="block text-sm font-medium text-gray-400">Your
+                                            Name</label>
+                                        <input type="text" name="name" id="name" required
+                                            class="mt-1 block w-full bg-gray-800 border border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-brand-cyan focus:border-brand-cyan sm:text-sm">
+                                    </div>
+                                    <div>
+                                        <label for="phone" class="block text-sm font-medium text-gray-400">Phone
+                                            Number</label>
+                                        <input type="tel" name="phone" id="phone" required
+                                            class="mt-1 block w-full bg-gray-800 border border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-brand-cyan focus:border-brand-cyan sm:text-sm">
+                                    </div>
+                                    <div>
+                                        <label for="vehicle" class="block text-sm font-medium text-gray-400">Vehicle
+                                            Model</label>
+                                        <input type="text" name="vehicle" id="vehicle" required
+                                            class="mt-1 block w-full bg-gray-800 border border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-brand-cyan focus:border-brand-cyan sm:text-sm"
+                                            placeholder="e.g., Toyota Prius">
+                                    </div>
+                                    <input type="hidden" id="selected-slot-id">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-brand-gray/80 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                    <button type="button" onclick="submitBooking()"
+                        class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-brand-cyan text-base font-medium text-brand-dark hover:bg-white focus:outline-none sm:ml-3 sm:w-auto sm:text-sm transition-colors font-bold">
+                        Confirm Appointment
+                    </button>
+                    <button type="button" onclick="closeModal()"
+                        class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-600 shadow-sm px-4 py-2 bg-transparent text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm transition-colors">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast"
+        class="fixed bottom-5 right-5 transform translate-y-20 opacity-0 transition-all duration-300 z-[110]">
+        <div class="glass border-l-4 border-brand-cyan text-white px-6 py-4 rounded-lg shadow-2xl flex items-center">
+            <i class="fas fa-check-circle text-brand-cyan text-2xl mr-4"></i>
+            <div>
+                <h4 class="font-bold">Success!</h4>
+                <p class="text-sm text-gray-300" id="toast-message">Booking confirmed successfully.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark pt-8 pb-8 border-t border-gray-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/HuqXz5JUHcx8BjFL3oEN/media/34f3ccef-6452-4361-9a91-72eae61e80c4.png"
+                alt="Infinity Customs Logo" class="h-12 mb-4 mx-auto block">
+            <p class="text-gray-400 mb-2">3 Page Grove, Taita, Lower Hutt 5019</p>
+            <p class="text-gray-400 mb-4">022 687 1424 | infinitycustomsnz@gmail.com</p>
+            <div class="text-gray-600 text-sm">
+                &copy; 2024 Infinity Customs. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="script.js"></script>
+    <script>
+        // Initialize Flatpickr
+        flatpickr("#date-picker", {
+            minDate: "today",
+            dateFormat: "Y-m-d",
+            theme: "dark",
+            onChange: function (selectedDates, dateStr, instance) {
+                loadSlots(dateStr);
+            }
+        });
+    </script>
+</body>
+
+</html>
